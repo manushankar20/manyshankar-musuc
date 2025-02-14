@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manyshankar music </title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            animation: rotate 5s linear infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background-color: #ff758c;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #ff5c7c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="photo" src="pic/mobile do.jpg" alt="Music Cover">
+        <audio id="music" src="pic/MOBILE VAPAS DO.mp3"></audio>
+        <div class="controls">
+            <button onclick="playMusic()">Play</button>
+            <button onclick="pauseMusic()">Pause</button>
+        </div>
+    </div>
+
+    <script>
+        const music = document.getElementById('music');
+        const photo = document.getElementById('photo');
+        
+        function playMusic() {
+            music.play();
+            photo.style.animationPlayState = 'running';
+        }
+        
+        function pauseMusic() {
+            music.pause();
+            photo.style.animationPlayState = 'paused';
+        }
+    </script>
+</body>
+</html>
